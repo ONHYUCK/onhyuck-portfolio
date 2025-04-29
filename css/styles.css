@@ -1,0 +1,1625 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary-color: #ff9a76; /* 파스텔 주황색 */
+    --secondary-color: #fbd46d; /* 파스텔 노란색 */
+    --hover-color: #ff8364; /* 더 진한 주황색 */
+    --dark-color: #333;
+    --light-color: #fff5eb; /* 매우 연한 주황색 배경 */
+    --success-color: #5cb85c;
+    --button-color: #ff9a76;
+    --button-hover-color: #ffb796;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #000000; /* 검정색으로 변경 */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.interests-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.interests-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--secondary-color);
+}
+
+section {
+    padding: 80px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), transparent);
+    box-shadow: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--hover-color);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--hover-color);
+    margin-top: 3px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 이미지 배경 스타일 */
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    
+    /* 다음 속성을 추가하면 이미지에 패럴랙스 효과가 적용됨 */
+    /* background-attachment: fixed; */
+    
+    /* 다음 속성들을 추가하면 이미지가 약간 움직이는 애니메이션 적용 */
+    animation: slow-pan 60s linear infinite;
+}
+
+@keyframes slow-pan {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative; /* Add relative positioning for the container */
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative; /* Add relative positioning */
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid var(--light-color);
+    position: relative;
+    background-image: url('../img/IMG_6594.JPG');
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0; /* 처음에는 보이지 않음 */
+    transform: translateY(30px); /* 약간 아래에서 시작 */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* 부드러운 전환 효과 */
+}
+
+.profile-image.fade-in {
+    opacity: 1; /* 애니메이션으로 완전히 보이게 됨 */
+    transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+/* Floating Dog Image Styles */
+.dog-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--light-color);
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    animation: float 12s ease-in-out infinite;
+    will-change: transform; /* Performance optimization */
+}
+
+/* Dog Interaction Styles */
+.dog-hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(255, 154, 118, 0.5);
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease-out;
+    z-index: 20 !important;
+}
+
+.dog-reaction {
+    /* animation 대신 transform을 직접 조작하여 위치 이동을 방지합니다 */
+    animation: pulse 0.6s ease-in-out;
+    z-index: 900 !important;
+    transform-origin: center center; /* 중앙에서 확대/축소되도록 함 */
+}
+
+/* 강아지가 제자리에서 박동하는 애니메이션 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Speech Bubble Styles - 강아지 밖에 표시 */
+.speech-bubble {
+    position: absolute;
+    background-color: white;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 30px; /* 타원형 모양을 위해 더 둥글게 */
+    width: auto;
+    min-width: 70px;
+    max-width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    border: 3px solid var(--primary-color);
+    opacity: 0;
+    animation: popIn 0.4s ease forwards, stayVisible 1.2s ease 0.4s forwards, fadeOut 0.4s ease 1.6s forwards;
+    pointer-events: none; /* 말풍선이 클릭을 방해하지 않도록 */
+    white-space: nowrap; /* 텍스트가 한 줄에 표시되도록 함 */
+}
+
+/* 말풍선 팝업 애니메이션 */
+@keyframes popIn {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.8); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* 말풍선이 일정 시간 유지되는 애니메이션 */
+@keyframes stayVisible {
+    0%, 100% { opacity: 1; }
+}
+
+/* 말풍선이 사라지는 애니메이션 */
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(0.8); }
+}
+
+/* Different positions for the dog image */
+.dog-image-1 {
+    top: -30px;
+    right: -30px;
+    animation-delay: 0s;
+    z-index: 12; /* Make it appear on top */
+}
+
+.dog-image-2 {
+    bottom: -20px;
+    left: -40px;
+    animation-delay: -4s;
+    width: 120px;
+    height: 120px;
+    z-index: 11;
+}
+
+.dog-image-3 {
+    top: 50%;
+    right: -60px;
+    animation-delay: -8s;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .interests {
+        max-width: none;
+    }
+    
+    .about-content {
+        overflow: visible;
+    }
+    
+    .dog-image {
+        width: 100px;
+        height: 100px;
+        z-index: 10;
+    }
+    
+    .dog-image-1 {
+        top: -20px;
+        right: -10px;
+    }
+    
+    .dog-image-2 {
+        bottom: -10px;
+        left: -10px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .dog-image-3 {
+        top: 50%;
+        right: -30px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Apple 스타일 시차 효과를 위한 추가 클래스 */
+.apple-parallax {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #aaa;
+}
+
+.interests {
+    margin-top: 30px;
+}
+
+.interests h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.interest-tags span {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Education Section */
+.education-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    min-width: 150px;
+}
+
+.university-logo, .school-logo {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.ib-logo {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+.education-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.education-item .degree {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.education-item .gpa {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.education-item .specialization {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.education-item .date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-image {
+    height: 200px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color: #aaa;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.5rem;
+    color: #f67280; /* 더 밝은 파스텔 빨간색으로 변경 */
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+.project-tags span {
+    background: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.project-date {
+    padding: 0 20px;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    margin: 0 20px 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--hover-color);
+}
+
+.project-link i {
+    margin-left: 5px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 20px 20px;
+}
+
+/* PDF Preview Styles */
+.project-preview {
+    padding: 0 20px 20px;
+}
+
+.preview-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.preview-button:hover {
+    background: var(--hover-color);
+}
+
+.pdf-preview {
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.contact-item a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 999;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        margin: 15px 0;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .about-content,
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    footer .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+/* Animation for elements */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section-title, .about-content, .education-item, .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-title.show, .about-content.show, .education-item.show, .project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 홈 섹션의 Contact Me 버튼에 대한 특별 스타일 */
+.hero .btn {
+    background: var(--button-color);
+    color: #000;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+    background: var(--button-hover-color);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown > a {
+    display: inline-block;
+    padding-bottom: 20px; /* 드롭다운 메뉴로 마우스를 이동할 때 공간 제공 */
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 10px 0;
+    margin-top: -5px; /* 상위 메뉴와 겹치도록 조정 */
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 드롭다운 컨텐츠와 상위 메뉴 사이의 빈 공간 채우기 */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: transparent;
+}
+
+.dropdown-content li {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 드롭다운 화살표 아이콘 */
+.dropdown > a::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* 모바일 메뉴에서 드롭다운 처리 */
+@media screen and (max-width: 768px) {
+    .dropdown > a {
+        padding-bottom: 0; /* 모바일에서는 패딩 제거 */
+    }
+    
+    .dropdown-content {
+        position: static;
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 5px;
+        margin-left: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+        max-height: 500px; /* 충분히 큰 값으로 설정 */
+    }
+    
+    .dropdown-content a {
+        padding: 8px 10px;
+    }
+    
+    .dropdown-content::before {
+        display: none; /* 모바일에서는 필요 없음 */
+    }
+}
+
+/* Achievements Section */
+.achievements {
+    background-color: #f9f9f9;
+}
+
+.sub-section {
+    margin-bottom: 60px;
+}
+
+.sub-title {
+    font-size: 2rem;
+    color: #000000; /* 검정색으로 변경 */
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+}
+
+/* Activities Section */
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.activity-item {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+}
+
+.activity-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+}
+
+.activity-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.activity-content h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.activity-role, .activity-date {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.activity-description {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* 활동 소셜 링크 스타일 - Activity Social Link Styles */
+.activity-social, .experience-content .activity-social {
+    margin-top: 15px;
+}
+
+.activity-social a, .experience-content .activity-social a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.activity-social a:hover, .experience-content .activity-social a:hover {
+    color: var(--hover-color);
+}
+
+.activity-social i, .experience-content .activity-social i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Research Section */
+.research-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.research-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.research-item h4 {
+    color: #222;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.research-authors {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.research-journal {
+    color: #555;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.research-description {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.research-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 5px 0;
+}
+
+.research-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+.research-link i {
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+/* Research Paper Preview Styles */
+.research-preview {
+    margin-top: 15px;
+}
+
+.research-item .preview-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.research-item .preview-button:hover {
+    background: var(--hover-color);
+}
+
+.research-item .pdf-preview {
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for research items */
+@media (max-width: 768px) {
+    .research-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .research-item {
+        padding: 20px;
+    }
+}
+
+/* Certificates Section */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.certificate-item {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.8rem;
+}
+
+.certificate-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.certificate-content h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.certificate-korean {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.certificate-issuer, .certificate-date, .certificate-id {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments for the new sections */
+@media screen and (max-width: 768px) {
+    .activity-item, .certificate-item {
+        flex-direction: column;
+    }
+    
+    .activity-icon, .certificate-icon {
+        min-width: 100%;
+        padding: 20px 0;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Project Slider Styles */
+.project-slider {
+    position: relative;
+    height: 200px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+}
+
+.slide.hide {
+    display: none;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+/* 첫 번째 이미지는 더 아래쪽에 위치 */
+.slide-img-1 {
+    object-position: center 70%; /* 값을 크게 증가시켜 이미지를 완전히 아래로 내림 */
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Image Preview Styles */
+.image-preview {
+    display: none;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.preview-img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.preview-img:last-child {
+    margin-bottom: 0;
+}
+
+/* Fairness 프로젝트의 이미지 위치 조정 */
+.project-card:nth-child(1) .project-img {
+    object-position: center 35%; /* 이미지를 아래로 내리기 위해 값 조정 */
+}
+
+/* Year Section Styles */
+.year-section {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.year-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+}
+
+/* 고등학교 과목 리스트 스타일 */
+.courses {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.courses h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.overall-score {
+    font-weight: 500;
+    color: var(--dark-color);
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 30px;
+    list-style-type: none;
+}
+
+.course-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex: 0 0 calc(50% - 30px);
+}
+
+.course-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+    .course-list li {
+        flex: 0 0 100%;
+    }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .research-item {
+        padding: 20px;
+    }
+    
+    .year-title {
+        font-size: 1.3rem;
+    }
+    
+    .research-item h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Internship Section Styles */
+.internships-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.internship-item {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.internship-item:hover {
+    transform: translateY(-5px);
+}
+
+.internship-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160px;
+    background: #fff;
+    padding: 20px;
+    border-right: none;
+}
+
+.company-logo {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.internship-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.internship-content h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.internship-company, .internship-date {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.internship-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.internship-responsibilities {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.internship-responsibilities li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Experience Section Styles */
+.experiences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-item {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+}
+
+.experience-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.experience-content h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.experience-role, .experience-date {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.experience-description {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments for internship and experience sections */
+@media screen and (max-width: 768px) {
+    .internship-item, .experience-item {
+        flex-direction: column;
+    }
+    
+    .internship-logo {
+        width: 100%;
+        min-height: 120px;
+        border-right: none;
+        border-bottom: none;
+    }
+    
+    .experience-icon {
+        min-width: 100%;
+        padding: 20px 0;
+    }
+}
+
+/* Responsive adjustments for education section */
+@media screen and (max-width: 768px) {
+    .education-item {
+        flex-direction: column;
+    }
+    
+    .education-logo {
+        margin-left: 0;
+        margin-top: 20px;
+        align-items: flex-start;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate(15px, -15px) rotate(5deg);
+    }
+    40% {
+        transform: translate(5px, 10px) rotate(-3deg);
+    }
+    60% {
+        transform: translate(-10px, -8px) rotate(2deg);
+    }
+    80% {
+        transform: translate(-15px, 5px) rotate(-1deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+} 
