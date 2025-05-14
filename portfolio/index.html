@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onhyuck (Andy) Choi - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Onhyuck Choi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li class="dropdown">
+                    <a href="#achievements">Achievements</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#activities">Extracurricular Activities</a></li>
+                        <li><a href="#research">Research Papers</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="video-container">
+            <video id="background-video" autoplay loop muted playsinline>
+                <!-- Video source will be added dynamically by JavaScript -->
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Onhyuck (Andy) Choi</h1>
+            <h2>Technological Systems Management Student</h2>
+            <p>Stony Brook University</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Onhyuck (Andy) Choi, a dedicated Technological Systems Management student at Stony Brook University. I am passionate about connecting technology with real-world applications to solve complex problems.</p>
+                    <p>My goal is to leverage my technical knowledge and management skills to bridge the gap between technology and business, creating innovative solutions that make a positive impact.</p>
+                    <div class="interests">
+                        <h3>Interests</h3>
+                        <div class="interest-tags">
+                            <span>Technology Management</span>
+                            <span>Data Analysis</span>
+                            <span>System Design</span>
+                            <span>Project Management</span>
+                            <span>Innovation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div id="profile-image" class="profile-image"></div>
+                    <!-- Floating Dog Images -->
+                    <div id="dog-image-1" class="dog-image dog-image-1"></div>
+                    <div id="dog-image-2" class="dog-image dog-image-2"></div>
+                    <div id="dog-image-3" class="dog-image dog-image-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-content">
+                    <h3>Stony Brook University</h3>
+                    <p class="degree">Bachelor of Science in Technological Systems Management</p>
+                    <p class="specialization">Specializing in Information Communication and Technologies for Development - ICT4D</p>
+                    <p class="gpa">GPA: 3.8/4.0</p>
+                    <p class="date">August 2020 - May 2024</p>
+                </div>
+                <div class="education-logo">
+                    <img src="img/logos/stonybrook_logo.png" alt="Stony Brook University Logo" class="university-logo">
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-content">
+                    <h3>Dwight School Seoul</h3>
+                    <p class="degree">International Baccalaureate Diploma</p>
+                    <p class="gpa">Score: 39/45</p>
+                    <p class="date">September 2018 - June 2020</p>
+                    <div class="courses">
+                        <h4>IB Courses</h4>
+                        <p class="overall-score">Overall Score: 39/45</p>
+                        <ul class="course-list">
+                            <li>Mathematics HL: 7</li>
+                            <li>Physics HL: 6</li>
+                            <li>Economics HL: 6</li>
+                            <li>English A SL: 6</li>
+                            <li>Korean A SL: 7</li>
+                            <li>Computer Science SL: 6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="education-logo">
+                    <img src="img/logos/jd_dc_logo.png" alt="Dwight School Logo" class="school-logo">
+                    <img src="img/logos/ib_logo.png" alt="IB Logo" class="ib-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            
+            <!-- Projects Subsection -->
+            <div id="projects" class="sub-section">
+                <h3 class="sub-title">Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-slider">
+                            <div class="slider-container">
+                                <div class="slide">
+                                    <img src="img/IMG_6594.JPG" alt="Fairness in Machine Learning Project" class="slide-img slide-img-1">
+                                </div>
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                        </div>
+                        <h3>Fairness in Machine Learning</h3>
+                        <p class="project-date">Fall 2023</p>
+                        <p>Developed algorithms to ensure fairness in loan approval systems, reducing bias while maintaining accuracy.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Ethics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-slider">
+                            <div class="slider-container">
+                                <div class="slide">
+                                    <img src="img/dog1.JPG" alt="Campus Energy Data Analysis" class="slide-img">
+                                </div>
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                        </div>
+                        <h3>Campus Energy Data Analysis</h3>
+                        <p class="project-date">Spring 2022</p>
+                        <p>Analyzed 5 years of campus energy consumption data to identify patterns and suggest optimization strategies.</p>
+                        <div class="project-tags">
+                            <span>R</span>
+                            <span>Data Visualization</span>
+                            <span>Sustainability</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-slider">
+                            <div class="slider-container">
+                                <div class="slide">
+                                    <img src="img/dog3.JPG" alt="Personal Portfolio Website" class="slide-img">
+                                </div>
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                        </div>
+                        <h3>Personal Portfolio Website</h3>
+                        <p class="project-date">Summer 2023</p>
+                        <p>Designed and developed a responsive personal portfolio website to showcase skills and achievements.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Extracurricular Activities Subsection -->
+            <div id="activities" class="sub-section">
+                <h3 class="sub-title">Extracurricular Activities</h3>
+                <div class="activities-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Technology Management Association</h4>
+                            <p class="activity-role">Vice President</p>
+                            <p class="activity-date">2021 - 2023</p>
+                            <p class="activity-description">Organized tech workshops, networking events, and industry guest lectures for over 200 TSM students. Led a team of 6 executive board members.</p>
+                            <div class="activity-social">
+                                <a href="#"><i class="fab fa-linkedin"></i> Association Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>International Student Organization</h4>
+                            <p class="activity-role">Committee Member</p>
+                            <p class="activity-date">2020 - 2022</p>
+                            <p class="activity-description">Facilitated cross-cultural events and provided support for international students adapting to campus life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Papers Subsection -->
+            <div id="research" class="sub-section">
+                <h3 class="sub-title">Research Papers</h3>
+                <div class="research-list">
+                    <div class="research-item">
+                        <h4>The Impact of Technological Systems on Healthcare Management</h4>
+                        <p class="research-authors">Choi, O., Smith, J., & Johnson, R.</p>
+                        <p class="research-journal">Journal of Technology Management, Vol. 15, 2023</p>
+                        <p class="research-description">Analyzed the integration of technological systems in healthcare facilities and their impact on patient care quality and operational efficiency.</p>
+                        <a href="#" class="research-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4>Sustainable Technology Implementation in Campus Environments</h4>
+                        <p class="research-authors">Choi, O., & Williams, T.</p>
+                        <p class="research-journal">Sustainability Technology Review, Vol. 8, 2022</p>
+                        <p class="research-description">Evaluated the effectiveness of sustainable technology implementations across university campuses and developed a framework for future implementations.</p>
+                        <a href="#" class="research-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificates Subsection -->
+            <div id="certificates" class="sub-section">
+                <h3 class="sub-title">Certificates</h3>
+                <div class="certificates-grid">
+                    <div class="certificate-item">
+                        <div class="certificate-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Data Science Professional</h4>
+                            <p class="certificate-issuer">IBM</p>
+                            <p class="certificate-date">June 2022</p>
+                            <p class="certificate-id">Credential ID: DSP-2022-78932</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Project Management Fundamentals</h4>
+                            <p class="certificate-issuer">PMI</p>
+                            <p class="certificate-date">August 2021</p>
+                            <p class="certificate-id">Credential ID: PMF-2021-45673</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item">
+                        <div class="certificate-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4>Python for Data Analysis</h4>
+                            <p class="certificate-issuer">Coursera</p>
+                            <p class="certificate-date">January 2021</p>
+                            <p class="certificate-id">Credential ID: PDA-2021-12345</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:onhyuck.choi@stonybrook.edu">onhyuck.choi@stonybrook.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Stony Brook, NY, United States</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/onhyuck.choi@stonybrook.edu" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Onhyuck (Andy) Choi. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/onhyuck-choi" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/onhyuck.choi" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
